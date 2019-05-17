@@ -1,0 +1,5 @@
+string=input("Enter a string")
+print("Enter String :- ",string)
+print("LowerCase String :- ",string.lower())
+print("UpperCase String :- ",string.upper())
+print("CamelCase String :- ",string.title())
