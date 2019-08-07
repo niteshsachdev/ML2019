@@ -112,8 +112,40 @@ Code Challenge
     Invalid
 """
 
-
-
+import re
+list1=[]
+while True:
+    str1=input("Enter numbers: ")
+    if not str1:
+        break
+    list1.append(str1)
+list3=[]
+flag=0
+for items in list1:
+    if re.findall(r'^[4-6][0-9]{3}\-?[0-9]{4}\-?[0-9]{4}\-?[0-9]{4}$',items):
+        list2=[]
+        for word in items:
+            if word=="-":
+                pass
+            else:
+                list2.append(word)
+#        print(list2)
+        for i in range(0,14):
+            a=i+1
+            b=i+2
+            c=i+3
+            if(list2[i]==list2[a] and list2[a]==list2[b] and list2[b]==list2[c]):
+                flag=1
+                break
+            else:
+                pass
+        if flag==1:
+            list3.append("Invalid")
+        else:
+            list3.append("valid")
+    else:
+        list3.append("Invalid")
+list3
 
 
 """
@@ -146,6 +178,24 @@ Code Challenge
 
 """
  
+import re
+list2=[]
+while True:
+    str1=input("Enter email address: ")
+    if not str1:
+        break
+    else:
+        list1=str1.split()
+        for items in list1:
+            if re.findall(r'^[a-zA-Z-_]+[0-9]*[a-zA-Z-_]*\@[a-zA-Z]+\.[a-z]{2,4}$',items):
+                list2.append(items)
+            else:
+                pass
+    
+sorted(list2)
+
+
+
 """
 
 Code Challenge
@@ -163,6 +213,9 @@ Code Challenge
      Use Regular Expressions 
 """
 
-
+with open("simpsons_phone_book.txt","rt") as f1:
+    for items in f1:
+        if re.search(r'^[J]{1}[a-z]*\s(Neu)',items):
+            print(items)
 
 

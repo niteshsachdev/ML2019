@@ -224,7 +224,7 @@ img.save('thumb_sample1.jpg')
 
 
 # Cropping
-img = Image.open("sample.jpg")
+img = Image.open("a.jpg")
                     # startx, starty,width,height
 crop_im = img.crop(box=(340, 20, 560, 164))
 crop_im.save('crop_sample1.jpg')
@@ -232,7 +232,7 @@ crop_im.save('crop_sample1.jpg')
 
 # Adding a Border
 
-img = Image.open("sample.jpg")
+img = Image.open("a.jpg")
 border_im = Image.new('RGB', (img.width+20, img.height+20), 'yellow')
 border_im.paste(img, (10, 10))
 border_im.save("data/border_sample.jpg")
@@ -250,7 +250,7 @@ img_flip.save("data/sample2.jpg")
 
 
 # Make Black and White image
-img_bw = Image.open("sample.jpg")
+img_bw = Image.open("a.jpg")
 img_bw.convert(mode='L').save('data/sample3.jpg')
 img_bw = Image.open("data/sample3.jpg")
 img_bw.show()
@@ -258,7 +258,7 @@ img_bw.show()
 
 # Blur the Images 
 from PIL import Image, ImageFilter
-img_blur = Image.open("sample.jpg")
+img_blur = Image.open("a.jpg")
 
 # 15 is the radius, default is 2 so it doesn’t show too much 
 img_blur.filter(ImageFilter.GaussianBlur(15)).save('sample4.jpg')

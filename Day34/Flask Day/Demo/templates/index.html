@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <link rel="stylesheet" href="/static/mystyle.css">
+  </head>
+  <body>
+    <h1>Welcome to Forsk Technologies</h1>
+    <form action="{{ url_for('form_data') }}" method="post">
+      <input type="text" name="name" placeholder="Enter Name"><br>
+      <input type="text" name="age" placeholder="Enter Age"><br>
+      <br>
+      <input type="submit" name="submit" value="Send Data">
+    </form>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-
+ 
 """
 
 Code Challenge 1
@@ -44,9 +44,6 @@ c.execute ("""CREATE TABLE student(
           student_roll_no INTEGER,
           student_branch TEXT
           )""")
-
-
-# STEP 4
 c.execute("INSERT INTO student VALUES ('Sylvester',25,1,'CS')")
 c.execute("INSERT INTO student VALUES ('Yogendra', 25,2,'CS')")
 c.execute("INSERT INTO student VALUES ('Rohit', 25,3,'CS')")
@@ -54,6 +51,9 @@ c.execute("INSERT INTO student VALUES ('Kunal', 25,4,'CS')")
 c.execute("INSERT INTO student VALUES ('Devendra', 25,5,'CS')")
 c.execute("SELECT * FROM student")
 print ( c.fetchall() )
+conn.commit()
+conn.close()
+
 #------------------------using sqlite
 
 
@@ -73,6 +73,8 @@ c.execute("INSERT INTO student VALUES ('Kunal', 25,4,'CS')")
 c.execute("INSERT INTO student VALUES ('Devendra', 25,5,'CS')")
 c.execute("SELECT * FROM student")
 print ( c.fetchall() )
+conn.commit()
+conn.close()
 
 
 """
@@ -177,8 +179,43 @@ https://www.icc-cricket.com/rankings/mens/team-rankings/odi
 
 
 
-
-
+import sqlite3
+conn = sqlite3.connect ( 'men_odi.db' )
+c = conn.cursor()
+c.execute ("""CREATE TABLE odi(
+          pos TEXT,
+          team TEXT,
+          weighter_matches TEXT,
+          points TEXT,
+          rating TEXT
+          )""")
+from bs4 import BeautifulSoup
+import requests
+odi = "https://www.icc-cricket.com/rankings/mens/team-rankings/odi"
+source = requests.get(odi).text
+soup = BeautifulSoup(source,"lxml")
+right_table=soup.find('table', class_='table')
+print (right_table)
+A=[]
+B=[]
+C=[]
+D=[]
+E=[]
+for row in right_table.findAll('tr'):
+    cells=row.findAll('td')
+    if(len(cells)==5):
+        A.append(cells[0].text.strip())
+        B.append(cells[1].text.strip())
+        C.append(cells[2].text.strip())
+        D.append(cells[3].text.strip())
+        E.append(cells[4].text.strip())
+for i in range(len(A)):
+    c.execute("INSERT INTO odi VALUES ('"+A[i]+"','"+B[i]+"','"+C[i]+"','"+D[i]+"','"+E[i]+"')")
+c.execute("SELECT * FROM odi")
+print ( c.fetchall() )
+conn.commit()
+conn.close()
+     
 
 
 

@@ -89,6 +89,12 @@ print (my_list[1:5:2])
 
 
 
+
+
+print(*my_list,sep=" ")
+
+
+
 #How to make big list which spans to multiple lines 
 list1 = ['a', 'b','c' ]
 list1 = ['a', 'b',\
@@ -400,7 +406,7 @@ help(hello_func)
 #Create a new package/module of your own function and 
 # import it and use it ( mylibrary.py )
 
-import mylibrary
+import mylibrary.py
 
 print (mylibrary.__file__)
 

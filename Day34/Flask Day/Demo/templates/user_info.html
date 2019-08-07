@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- <h1>Your Name is {{ info["Name"] }}</h1>
+    <h3>Your Age is {{ info["Age"] }}</h3> -->
+    <ul>
+      {% for i in info.values() %}
+      <li>{{ i }}</li>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html>

@@ -264,8 +264,7 @@ Code Challenge
 """
 
 
- # Optional 
- 
+     
 """
 Code Challenge
   Name: 
@@ -278,6 +277,11 @@ Code Challenge
     https://www.programiz.com/python-programming/examples/hash-file
 """
 
+
+
+
+
+
 """
 Code Challenge
   Name: 
@@ -289,6 +293,11 @@ Code Challenge
   Hint:
     https://www.programiz.com/python-programming/examples/resolution-image
 """
+
+
+
+
+
 
 """
 Code Challenge

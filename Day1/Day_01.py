@@ -32,7 +32,6 @@ History of Python
   20th Feb 1991 by Guido van Rossum, 
   British Comedy Troupe - Monty Python Flying Circus
 
-
 Features of Python
     General Purpose Dynamic Compiled Language 
     Simple and Easy to Learn
@@ -386,14 +385,12 @@ Assignment Operator  ( give a hands on using two different number )
     ( a //= 1 ) ( a = a // 1 )
 """
 
-
-
 """
 Taking Integer Input from user
 """
 
 age = input ( "Enter your Age > ")
-print (age)
+print(age)
 print (type(age))
   
 age = int(age)

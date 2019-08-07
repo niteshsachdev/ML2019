@@ -54,7 +54,7 @@ print (list(enumerate(s1,2)))
 
 # Python program to illustrate # enumerate function in loops 
 l1 = ["eat","sleep","repeat"]    
-
+#print(list(enumerate(l1)))
 index = 0
 for ele in l1 :
   print("{} {} ". format (index, ele ))
@@ -92,8 +92,6 @@ for step in enumerate(names_of_days):
     print("{} : {} ". format (*step))
     
 #single * denotes tuple and ** denotes dictionary 
- 
-
 
 """
 Create a custom function to return a tuple   
@@ -278,7 +276,7 @@ print (a)
 
 a = {'a','b','c','d','e','f'}   # not a dictionary
 print (a)
-
+type(a)
 
 
 
